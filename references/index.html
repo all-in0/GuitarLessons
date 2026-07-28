@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Довідник — Електрогітара</title>
+<meta name="theme-color" content="#1B1220">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@400;700&family=Noto+Music&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="reference" data-title="Довідник" data-back="../index.html">
+
+<main class="wrap">
+  <div class="hero">
+    <p class="hero__eyebrow">Завжди під рукою</p>
+    <h1 class="hero__title">Довідник</h1>
+    <p class="hero__lead">Усе, що доводиться згадувати щоразу. Сюди можна заходити прямо посеред заняття, не шукаючи потрібний урок.</p>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</main>
+
+<script src="../assets/js/course-data.js"></script>
+<script src="../assets/js/progress.js"></script>
+<script>
+document.getElementById("grid").innerHTML = COURSE.reference.map(function (r) {
+  return '<a class="tile" href="../' + r.file + '"><p class="tile__title">' + r.title +
+    '</p><p class="tile__desc">' + r.desc + "</p></a>";
+}).join("");
+</script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>
