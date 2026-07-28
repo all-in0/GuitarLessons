@@ -122,7 +122,51 @@
     });
   }
 
+  /* Резервна копія прогресу — без консолі, щоб працювало з планшета */
+  function wireBackup() {
+    const msg = document.getElementById("dataMsg");
+    const file = document.getElementById("importFile");
+    if (!msg || !file) return;
+
+    document.getElementById("exportBtn").addEventListener("click", function () {
+      const stamp = new Date().toISOString().slice(0, 10);
+      const blob = new Blob([Progress.exportJson()], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "gitara-prohres-" + stamp + ".json";
+      a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+      msg.textContent = "Копію збережено у завантаження.";
+    });
+
+    document.getElementById("importBtn").addEventListener("click", function () { file.click(); });
+
+    file.addEventListener("change", function () {
+      const f = file.files[0];
+      if (!f) return;
+      const reader = new FileReader();
+      reader.onload = function () {
+        try {
+          Progress.importJson(reader.result);
+          location.reload();
+        } catch (err) {
+          msg.textContent = "Не вдалося прочитати файл: " + err.message + ". Потрібен файл, збережений кнопкою «Зберегти копію».";
+        }
+      };
+      reader.readAsText(f);
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", function (e) {
+      e.preventDefault();
+      if (confirm("Стерти всі позначки «пройдено» і рекорди BPM? Скасувати це не вийде.")) {
+        Progress.reset();
+        location.reload();
+      }
+    });
+  }
+
   drawNeck();
   drawStats();
   drawModules();
+  wireBackup();
 })();

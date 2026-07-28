@@ -12,11 +12,11 @@ window.COURSE = {
       title: "Старт: гітара, комбік, звук",
       goal: "Зібрати робоче місце, дістати перший чистий звук і навчитися налаштовувати гітару самостійно.",
       lessons: [
-        { id: "m0l1", title: "Електрогітара зсередини: що тут для чого", min: 30, file: "lessons/m0l1-anatomy.html", status: "planned" },
-        { id: "m0l2", title: "Комбік: gain, volume, tone і безпечна гучність", min: 30, file: "lessons/m0l2-amp.html", status: "planned" },
-        { id: "m0l3", title: "Посадка, ремінь, положення рук", min: 30, file: "lessons/m0l3-posture.html", status: "planned" },
-        { id: "m0l4", title: "Медіатор: хват і перший удар", min: 35, file: "lessons/m0l4-pick.html", status: "planned" },
-        { id: "m0l5", title: "Настройка гітари й догляд за струнами", min: 30, file: "lessons/m0l5-tuning.html", status: "planned" }
+        { id: "m0l1", title: "Електрогітара зсередини: що тут для чого", min: 35, file: "lessons/m0l1-anatomy.html", status: "ready" },
+        { id: "m0l2", title: "Комбік: gain, volume, tone і безпечна гучність", min: 35, file: "lessons/m0l2-amp.html", status: "ready" },
+        { id: "m0l3", title: "Посадка, ремінь, положення рук", min: 40, file: "lessons/m0l3-posture.html", status: "ready" },
+        { id: "m0l4", title: "Медіатор: хват і перший удар", min: 40, file: "lessons/m0l4-pick.html", status: "ready" },
+        { id: "m0l5", title: "Настройка гітари й догляд за струнами", min: 40, file: "lessons/m0l5-tuning.html", status: "ready" }
       ]
     },
     {
@@ -150,12 +150,12 @@ window.COURSE = {
     { id: "s-anime-3", title: "Silhouette", artist: "KANA-BOON — Naruto Shippuden", genre: "anime", level: 3, file: "songs/s-anime-3.html", status: "planned" },
     { id: "s-anime-4", title: "Unravel", artist: "TK — Tokyo Ghoul", genre: "anime", level: 5, file: "songs/s-anime-4.html", status: "planned" },
     { id: "s-anime-5", title: "Blue Bird", artist: "Ikimono-gakari — Naruto Shippuden", genre: "anime", level: 3, file: "songs/s-anime-5.html", status: "planned" },
-    { id: "s-ost-1", title: "Hedwig's Theme", artist: "Harry Potter", genre: "ost", level: 1, file: "songs/s-ost-1.html", status: "planned" },
+    { id: "s-ost-1", title: "Hedwig's Theme", artist: "Harry Potter", genre: "ost", level: 1, file: "songs/s-ost-1.html", status: "ready" },
     { id: "s-ost-2", title: "He's a Pirate", artist: "Pirates of the Caribbean", genre: "ost", level: 2, file: "songs/s-ost-2.html", status: "planned" },
     { id: "s-ost-3", title: "Main Theme", artist: "The Legend of Zelda", genre: "ost", level: 1, file: "songs/s-ost-3.html", status: "planned" },
     { id: "s-ost-4", title: "Megalovania", artist: "Undertale", genre: "ost", level: 4, file: "songs/s-ost-4.html", status: "planned" },
     { id: "s-rock-1", title: "Smoke on the Water", artist: "Deep Purple", genre: "rock", level: 3, file: "songs/s-rock-1.html", status: "planned" },
-    { id: "s-rock-2", title: "Seven Nation Army", artist: "The White Stripes", genre: "rock", level: 1, file: "songs/s-rock-2.html", status: "planned" },
+    { id: "s-rock-2", title: "Seven Nation Army", artist: "The White Stripes", genre: "rock", level: 1, file: "songs/s-rock-2.html", status: "ready" },
     { id: "s-rock-3", title: "Come As You Are", artist: "Nirvana", genre: "rock", level: 2, file: "songs/s-rock-3.html", status: "planned" },
     { id: "s-rock-4", title: "Iron Man", artist: "Black Sabbath", genre: "rock", level: 3, file: "songs/s-rock-4.html", status: "planned" },
     { id: "s-pop-1", title: "Believer", artist: "Imagine Dragons", genre: "pop", level: 3, file: "songs/s-pop-1.html", status: "planned" }

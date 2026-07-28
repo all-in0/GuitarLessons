@@ -52,6 +52,23 @@
       </a>
     </div>
   </div>
+
+  <div class="section">
+    <div class="section__head">
+      <h2 class="section__title">Прогрес</h2>
+    </div>
+    <div class="note">
+      <span class="note__label">Де зберігається</span>
+      Прогрес живе в пам'яті цього браузера на цьому пристрої. Він зникне, якщо очистити дані браузера. Раз на місяць варто зберегти копію — це один невеликий файл.
+    </div>
+    <div class="pager">
+      <button class="btn btn--ghost" id="exportBtn">Зберегти копію</button>
+      <button class="btn btn--ghost" id="importBtn">Відновити з файлу</button>
+    </div>
+    <input type="file" id="importFile" accept="application/json,.json" hidden>
+    <p id="dataMsg" class="figure__cap"></p>
+    <p><a href="#" id="resetBtn">Почати курс спочатку</a></p>
+  </div>
 </main>
 
 <script src="assets/js/course-data.js"></script>
