@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Пісні — Електрогітара</title>
+<meta name="theme-color" content="#1B1220">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@400;700&family=Noto+Music&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="songs" data-title="Пісні" data-back="../index.html">
+
+<main class="wrap">
+  <div class="hero">
+    <p class="hero__eyebrow">Розбори</p>
+    <h1 class="hero__title">Пісні</h1>
+    <p class="hero__lead">Позначка «М3» означає: пісня стає посильною після третього модуля. Раніше можна дивитись, але не засмучуватись.</p>
+  </div>
+
+  <div class="filters" id="filters"></div>
+  <div id="list"></div>
+</main>
+
+<script src="../assets/js/course-data.js"></script>
+<script src="../assets/js/progress.js"></script>
+<script>
+(function () {
+  var active = "all";
+  var filters = document.getElementById("filters");
+  var list = document.getElementById("list");
+
+  var keys = ["all"].concat(Object.keys(COURSE.genres));
+  var names = { all: "Усі" };
+  Object.keys(COURSE.genres).forEach(function (k) { names[k] = COURSE.genres[k]; });
+
+  filters.innerHTML = keys.map(function (k) {
+    return '<button class="chip" data-g="' + k + '" aria-pressed="' + (k === active) + '">' + names[k] + "</button>";
+  }).join("");
+
+  function render() {
+    var items = COURSE.songs.filter(function (s) { return active === "all" || s.genre === active; });
+    list.innerHTML = items.map(function (s) {
+      var soon = s.status !== "ready";
+      var inner =
+        '<span class="badge badge--amber">М' + s.level + "</span>" +
+        '<span class="song__meta"><span class="song__title">' + s.title + "</span><br>" +
+        '<span class="song__artist">' + s.artist + "</span></span>" +
+        '<span class="badge">' + (soon ? "скоро" : COURSE.genres[s.genre]) + "</span>";
+      return soon
+        ? '<div class="song song--soon">' + inner + "</div>"
+        : '<a class="song" href="../' + s.file + '">' + inner + "</a>";
+    }).join("");
+  }
+
+  filters.addEventListener("click", function (e) {
+    var b = e.target.closest(".chip");
+    if (!b) return;
+    active = b.getAttribute("data-g");
+    filters.querySelectorAll(".chip").forEach(function (c) {
+      c.setAttribute("aria-pressed", c === b ? "true" : "false");
+    });
+    render();
+  });
+
+  render();
+})();
+</script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

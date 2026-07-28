@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Метроном — Електрогітара</title>
+<meta name="theme-color" content="#1B1220">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@400;700&family=Noto+Music&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="tools" data-title="Метроном" data-back="../index.html">
+
+<main class="wrap">
+  <div class="metro">
+    <div class="metro__bpm" id="bpm">80</div>
+    <div class="metro__label">bpm</div>
+
+    <div class="metro__beats" id="beats"></div>
+
+    <div class="metro__row">
+      <button class="round" id="minus" aria-label="Повільніше на 5">−</button>
+      <button class="btn" id="play" style="width:150px">Старт</button>
+      <button class="round" id="plus" aria-label="Швидше на 5">+</button>
+    </div>
+
+    <input type="range" id="slider" min="40" max="200" step="1" value="80" aria-label="Темп">
+
+    <div class="metro__row" id="meter">
+      <button class="chip" data-b="2">2/4</button>
+      <button class="chip" data-b="3">3/4</button>
+      <button class="chip" data-b="4" aria-pressed="true">4/4</button>
+      <button class="chip" data-b="0">без акценту</button>
+    </div>
+  </div>
+
+  <div class="note">
+    <span class="note__label">Як користуватись</span>
+    Став темп, у якому вправа виходить <b>без жодної помилки тричі поспіль</b>. Тільки після цього +5 BPM. Швидше — не краще: помилка, зіграна швидко, теж запам'ятовується.
+  </div>
+</main>
+
+<script src="../assets/js/course-data.js"></script>
+<script src="../assets/js/progress.js"></script>
+<script src="../assets/js/metronome.js"></script>
+<script>
+(function () {
+  var bpmEl = document.getElementById("bpm");
+  var beatsEl = document.getElementById("beats");
+  var slider = document.getElementById("slider");
+  var play = document.getElementById("play");
+
+  function drawBeats(active) {
+    var n = Metronome.state.beats || 1;
+    var html = "";
+    for (var i = 0; i < n; i++) {
+      html += '<span class="beat' + (i === 0 ? " beat--first" : "") + (i === active ? " beat--on" : "") + '"></span>';
+    }
+    beatsEl.innerHTML = html;
+  }
+
+  Metronome.state.onBeat = function (b) {
+    drawBeats(b);
+    setTimeout(function () { drawBeats(-1); }, Math.min(150, 30000 / Metronome.state.bpm));
+  };
+
+  function setBpm(v) {
+    Metronome.setBpm(v);
+    bpmEl.textContent = Metronome.state.bpm;
+    slider.value = Metronome.state.bpm;
+  }
+
+  document.getElementById("minus").addEventListener("click", function () { setBpm(Metronome.state.bpm - 5); });
+  document.getElementById("plus").addEventListener("click", function () { setBpm(Metronome.state.bpm + 5); });
+  slider.addEventListener("input", function () { setBpm(slider.value); });
+
+  play.addEventListener("click", function () {
+    Metronome.toggle();
+    play.textContent = Metronome.state.running ? "Стоп" : "Старт";
+    if (Metronome.state.running) Progress.touch();
+    else drawBeats(-1);
+  });
+
+  document.getElementById("meter").addEventListener("click", function (e) {
+    var b = e.target.closest(".chip");
+    if (!b) return;
+    Metronome.setBeats(Number(b.getAttribute("data-b")));
+    document.querySelectorAll("#meter .chip").forEach(function (c) {
+      c.setAttribute("aria-pressed", c === b ? "true" : "false");
+    });
+    drawBeats(-1);
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.code === "Space" && e.target === document.body) { e.preventDefault(); play.click(); }
+  });
+
+  setBpm(80);
+  drawBeats(-1);
+})();
+</script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

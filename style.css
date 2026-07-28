@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk" data-base="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Електрогітара — практичний курс</title>
+<meta name="theme-color" content="#1B1220">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@400;700&family=Noto+Music&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="course">
+
+<main class="wrap">
+  <div class="hero">
+    <p class="hero__eyebrow">Практика щодня</p>
+    <h1 class="hero__title">Електро&shy;гітара</h1>
+    <p class="hero__lead">Дев'ять модулів, від першого звуку до власного соло. Кожен лад на грифі — один модуль. Заповнюється, коли проходиш уроки.</p>
+  </div>
+
+  <div id="neck"></div>
+  <div class="stats" id="stats"></div>
+
+  <div class="section">
+    <div class="section__head">
+      <h2 class="section__title">Модулі</h2>
+    </div>
+    <div id="modules"></div>
+  </div>
+
+  <div class="section">
+    <div class="section__head">
+      <h2 class="section__title">Швидкий доступ</h2>
+    </div>
+    <div class="grid">
+      <a class="tile" href="reference/index.html">
+        <p class="tile__title">Довідник</p>
+        <p class="tile__desc">Те, до чого повертаємось щоразу</p>
+      </a>
+      <a class="tile" href="tools/metronome.html">
+        <p class="tile__title">Метроном</p>
+        <p class="tile__desc">Без нього вправи не рахуються</p>
+      </a>
+      <a class="tile" href="songs/index.html">
+        <p class="tile__title">Пісні</p>
+        <p class="tile__desc">Аніме, саундтреки, рок</p>
+      </a>
+      <a class="tile" href="reference/warmup.html">
+        <p class="tile__title">Розігрів</p>
+        <p class="tile__desc">5 хвилин перед заняттям</p>
+      </a>
+    </div>
+  </div>
+</main>
+
+<script src="assets/js/course-data.js"></script>
+<script src="assets/js/progress.js"></script>
+<script src="assets/js/home.js"></script>
+<script src="assets/js/shell.js"></script>
+</body>
+</html>

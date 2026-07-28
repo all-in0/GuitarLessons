@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- ШАБЛОН УРОКУ.
+     1. Скопіюй файл під іменем з course-data.js (напр. m1l3-alternate.html)
+     2. Заміни data-lesson, data-title, <title> і вміст <article>
+     3. У course-data.js постав цьому уроку status: "ready"
+     Блоки нижче — повний набір доступних елементів. Зайві просто видаляй. -->
+<html lang="uk" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Назва уроку — Електрогітара</title>
+<meta name="theme-color" content="#1B1220">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@400;700&family=Noto+Music&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="course" data-lesson="ЗАМІНИ_ID" data-title="Модуль N · Коротка назва" data-back="../index.html">
+
+<main class="wrap lesson-page">
+  <article>
+    <h1>Повна назва уроку</h1>
+
+    <div class="goalbox">
+      <span class="goalbox__label">Мета заняття</span>
+      Одне речення: що дитина вміє в кінці, чого не вміла на початку.
+    </div>
+
+    <h2>Що відбувається</h2>
+    <p>Пояснення теорії простою мовою. Абзаци короткі — сторінку читають з планшета, стоячи з гітарою в руках.</p>
+
+    <div class="why">
+      <span class="why__label">Навіщо це</span>
+      Завжди пояснюємо, де ця навичка знадобиться в реальній пісні. Без цього вправа перетворюється на покарання.
+    </div>
+
+    <h2>Як робити</h2>
+    <ol>
+      <li>Крок перший, дуже конкретний.</li>
+      <li>Крок другий.</li>
+      <li>Крок третій.</li>
+    </ol>
+
+    <div class="warn">
+      <span class="warn__label">Типова помилка</span>
+      Що зазвичай іде не так і як це помітити самому, не чекаючи на дорослого.
+    </div>
+
+    <!-- ── Ноти ── -->
+    <div class="figure">
+      <div data-staff='{"meter":"4/4","notes":[{"n":"E4","d":4,"label":"1"},{"n":"F4","d":4,"label":"2"},{"n":"G4","d":4,"label":"3"},{"n":"A4","d":4,"label":"4"},{"bar":true},{"n":"B4","d":2},{"rest":true,"d":2}]}'></div>
+      <p class="figure__cap">Підпис: що саме тут показано.</p>
+    </div>
+
+    <!-- ── Табулатура ── -->
+    <div class="figure">
+      <div data-tab="e|--0--1--3--|
+B|-----------|
+G|-----------|
+D|-----------|
+A|-----------|
+E|-----------|"></div>
+      <p class="figure__cap">Та сама фраза в табах.</p>
+    </div>
+
+    <!-- ── Схема грифа ── -->
+    <div class="figure">
+      <div data-fretboard='{"from":1,"to":5,"dots":[{"s":1,"f":1,"label":"1"},{"s":1,"f":3,"label":"3"},{"s":2,"f":1,"label":"1"}]}'></div>
+      <p class="figure__cap">Цифра в кружечку — палець лівої руки.</p>
+    </div>
+
+    <!-- ── Акорд ── -->
+    <div class="figure">
+      <div data-chord='{"name":"Em","frets":[0,2,2,0,0,0],"fingers":[0,2,3,0,0,0]}'></div>
+      <p class="figure__cap">Струни зліва направо: від товстої мі до тонкої.</p>
+    </div>
+
+    <!-- ── Вправи ── -->
+    <h2>Вправи</h2>
+
+    <div class="drill">
+      <div class="drill__head">
+        <span class="drill__num">01</span>
+        <span class="drill__title">Назва вправи</span>
+      </div>
+      <p>Що робимо, у двох реченнях.</p>
+      <div class="drill__spec">
+        <span class="spec">Темп <b>60 BPM</b></span>
+        <span class="spec">Ціль <b>90 BPM</b></span>
+        <span class="spec">Час <b>7 хв</b></span>
+      </div>
+      <div class="done-when"><b>Готово, коли:</b> конкретний вимірюваний критерій — три чисті проходи поспіль у цільовому темпі.</div>
+    </div>
+
+    <div class="drill">
+      <div class="drill__head">
+        <span class="drill__num">02</span>
+        <span class="drill__title">Друга вправа</span>
+      </div>
+      <p>Опис.</p>
+      <div class="drill__spec">
+        <span class="spec">Темп <b>70 BPM</b></span>
+        <span class="spec">Час <b>8 хв</b></span>
+      </div>
+      <div class="done-when"><b>Готово, коли:</b> критерій.</div>
+    </div>
+
+    <h2>Мікро-шматок пісні</h2>
+    <p>Двотактова фраза з реального треку, де щойно вивчена техніка справді потрібна. Повний розбір — на сторінці пісні.</p>
+
+    <div class="note">
+      <span class="note__label">На завтра</span>
+      Що повторити коротко на початку наступного заняття.
+    </div>
+  </article>
+
+  <div data-finish></div>
+</main>
+
+<script src="../assets/js/course-data.js"></script>
+<script src="../assets/js/progress.js"></script>
+<script src="../assets/js/notation.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>
