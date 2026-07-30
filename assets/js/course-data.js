@@ -145,22 +145,22 @@ window.COURSE = {
 
   /* Розбори пісень. level — з якого модуля пісня стає посильною. */
   songs: [
-    { id: "s-pd-1", title: "Щедрик", artist: "Микола Леонтович", genre: "pd", level: 1, file: "songs/s-pd-1.html", status: "ready" },
-    { id: "s-pd-2", title: "Ода до радості", artist: "Бетховен", genre: "pd", level: 1, file: "songs/s-pd-2.html", status: "ready" },
-    { id: "s-anime-1", title: "Gurenge", artist: "LiSA — Kimetsu no Yaiba", genre: "anime", level: 3, file: "songs/s-anime-1.html", status: "planned" },
-    { id: "s-anime-2", title: "Cruel Angel's Thesis", artist: "Neon Genesis Evangelion", genre: "anime", level: 2, file: "songs/s-anime-2.html", status: "planned" },
-    { id: "s-anime-3", title: "Silhouette", artist: "KANA-BOON — Naruto Shippuden", genre: "anime", level: 3, file: "songs/s-anime-3.html", status: "planned" },
-    { id: "s-anime-4", title: "Unravel", artist: "TK — Tokyo Ghoul", genre: "anime", level: 5, file: "songs/s-anime-4.html", status: "planned" },
-    { id: "s-anime-5", title: "Blue Bird", artist: "Ikimono-gakari — Naruto Shippuden", genre: "anime", level: 3, file: "songs/s-anime-5.html", status: "planned" },
-    { id: "s-ost-1", title: "Hedwig's Theme", artist: "Harry Potter", genre: "ost", level: 1, file: "songs/s-ost-1.html", status: "ready" },
-    { id: "s-ost-2", title: "He's a Pirate", artist: "Pirates of the Caribbean", genre: "ost", level: 2, file: "songs/s-ost-2.html", status: "planned" },
-    { id: "s-ost-3", title: "Main Theme", artist: "The Legend of Zelda", genre: "ost", level: 1, file: "songs/s-ost-3.html", status: "planned" },
-    { id: "s-ost-4", title: "Megalovania", artist: "Undertale", genre: "ost", level: 4, file: "songs/s-ost-4.html", status: "planned" },
-    { id: "s-rock-1", title: "Smoke on the Water", artist: "Deep Purple", genre: "rock", level: 3, file: "songs/s-rock-1.html", status: "planned" },
-    { id: "s-rock-2", title: "Seven Nation Army", artist: "The White Stripes", genre: "rock", level: 1, file: "songs/s-rock-2.html", status: "ready" },
-    { id: "s-rock-3", title: "Come As You Are", artist: "Nirvana", genre: "rock", level: 2, file: "songs/s-rock-3.html", status: "planned" },
-    { id: "s-rock-4", title: "Iron Man", artist: "Black Sabbath", genre: "rock", level: 3, file: "songs/s-rock-4.html", status: "planned" },
-    { id: "s-pop-1", title: "Believer", artist: "Imagine Dragons", genre: "pop", level: 3, file: "songs/s-pop-1.html", status: "planned" }
+    { id: "s-pd-1", title: "Щедрик", artist: "Микола Леонтович", genre: "pd", level: 1, diff: 2, file: "songs/s-pd-1.html", status: "ready" },
+    { id: "s-pd-2", title: "Ода до радості", artist: "Бетховен", genre: "pd", level: 1, diff: 1, file: "songs/s-pd-2.html", status: "ready" },
+    { id: "s-anime-1", title: "Gurenge", artist: "LiSA — Kimetsu no Yaiba", genre: "anime", level: 3, diff: 4, file: "songs/s-anime-1.html", status: "planned" },
+    { id: "s-anime-2", title: "Cruel Angel's Thesis", artist: "Neon Genesis Evangelion", genre: "anime", level: 2, diff: 3, file: "songs/s-anime-2.html", status: "ready" },
+    { id: "s-anime-3", title: "Silhouette", artist: "KANA-BOON — Naruto Shippuden", genre: "anime", level: 3, diff: 4, file: "songs/s-anime-3.html", status: "planned" },
+    { id: "s-anime-4", title: "Unravel", artist: "TK — Tokyo Ghoul", genre: "anime", level: 5, diff: 5, file: "songs/s-anime-4.html", status: "planned" },
+    { id: "s-anime-5", title: "Blue Bird", artist: "Ikimono-gakari — Naruto Shippuden", genre: "anime", level: 3, diff: 4, file: "songs/s-anime-5.html", status: "planned" },
+    { id: "s-ost-1", title: "Hedwig's Theme", artist: "Harry Potter", genre: "ost", level: 1, diff: 2, file: "songs/s-ost-1.html", status: "ready" },
+    { id: "s-ost-2", title: "He's a Pirate", artist: "Pirates of the Caribbean", genre: "ost", level: 2, diff: 3, file: "songs/s-ost-2.html", status: "ready" },
+    { id: "s-ost-3", title: "Main Theme", artist: "The Legend of Zelda", genre: "ost", level: 1, diff: 2, file: "songs/s-ost-3.html", status: "ready" },
+    { id: "s-ost-4", title: "Megalovania", artist: "Undertale", genre: "ost", level: 4, diff: 5, file: "songs/s-ost-4.html", status: "planned" },
+    { id: "s-rock-1", title: "Smoke on the Water", artist: "Deep Purple", genre: "rock", level: 3, diff: 3, file: "songs/s-rock-1.html", status: "planned" },
+    { id: "s-rock-2", title: "Seven Nation Army", artist: "The White Stripes", genre: "rock", level: 1, diff: 1, file: "songs/s-rock-2.html", status: "ready" },
+    { id: "s-rock-3", title: "Come As You Are", artist: "Nirvana", genre: "rock", level: 2, diff: 2, file: "songs/s-rock-3.html", status: "ready" },
+    { id: "s-rock-4", title: "Iron Man", artist: "Black Sabbath", genre: "rock", level: 3, diff: 3, file: "songs/s-rock-4.html", status: "planned" },
+    { id: "s-pop-1", title: "Believer", artist: "Imagine Dragons", genre: "pop", level: 3, diff: 3, file: "songs/s-pop-1.html", status: "planned" }
   ],
 
   genres: {

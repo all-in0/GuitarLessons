@@ -309,6 +309,7 @@ a:hover { text-decoration: underline; }
 }
 .song:hover { text-decoration: none; border-color: var(--amber); }
 .song--soon { opacity: 0.5; pointer-events: none; }
+.song--done { border-left: 4px solid var(--mint); }
 
 .song__meta { flex: 1; min-width: 0; }
 .song__title { font-family: var(--f-display); font-weight: 700; font-size: 15px; }

@@ -16,7 +16,7 @@
   <div class="hero">
     <p class="hero__eyebrow">Розбори</p>
     <h1 class="hero__title">Пісні</h1>
-    <p class="hero__lead">Позначка «М3» означає: пісня стає посильною після третього модуля. Раніше можна дивитись, але не засмучуватись.</p>
+    <p class="hero__lead">Крапки ● — складність від 1 до 5. Позначка «М3» — з якого модуля пісня стає посильною. Пройдені пісні отримують ✓ — кнопка внизу сторінки кожного розбору.</p>
   </div>
 
   <div class="filters" id="filters"></div>
@@ -39,18 +39,26 @@
     return '<button class="chip" data-g="' + k + '" aria-pressed="' + (k === active) + '">' + names[k] + "</button>";
   }).join("");
 
+  function diffDots(d) {
+    var out = "";
+    for (var i = 1; i <= 5; i++) out += i <= d ? "●" : "○";
+    return out;
+  }
+
   function render() {
     var items = COURSE.songs.filter(function (s) { return active === "all" || s.genre === active; });
+    items = items.slice().sort(function (a, b) { return (a.diff || 3) - (b.diff || 3); });
     list.innerHTML = items.map(function (s) {
       var soon = s.status !== "ready";
+      var done = Progress.isDone(s.id);
       var inner =
         '<span class="badge badge--amber">М' + s.level + "</span>" +
-        '<span class="song__meta"><span class="song__title">' + s.title + "</span><br>" +
-        '<span class="song__artist">' + s.artist + "</span></span>" +
+        '<span class="song__meta"><span class="song__title">' + s.title + (done ? ' <span class="badge badge--mint">✓</span>' : "") + "</span><br>" +
+        '<span class="song__artist">' + s.artist + ' · <span title="Складність ' + (s.diff || "?") + ' з 5">' + diffDots(s.diff || 3) + "</span></span></span>" +
         '<span class="badge">' + (soon ? "скоро" : COURSE.genres[s.genre]) + "</span>";
       return soon
         ? '<div class="song song--soon">' + inner + "</div>"
-        : '<a class="song" href="../' + s.file + '">' + inner + "</a>";
+        : '<a class="song' + (done ? " song--done" : "") + '" href="../' + s.file + '">' + inner + "</a>";
     }).join("");
   }
 
