@@ -463,6 +463,46 @@ a:hover { text-decoration: underline; }
 }
 .done-when b { color: var(--mint); }
 
+/* Хореографія пальців у розборах пісень */
+.chore {
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 6px 16px;
+  margin: 14px 0;
+}
+
+.chore__row {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 15px;
+}
+.chore__row:last-child { border-bottom: 0; }
+
+.chore__mark {
+  font-family: var(--f-mono);
+  font-size: 13px;
+  flex: none;
+  width: 84px;
+  color: var(--amber);
+}
+.chore__mark--hold { color: var(--dim); }
+.chore__mark--off { color: var(--sunburst); }
+.chore__mark--slide { color: var(--mint); }
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-family: var(--f-mono);
+  font-size: 12.5px;
+  color: var(--dim);
+  margin: 10px 0 18px;
+}
+
 /* Нотація */
 .figure { margin: 18px 0; }
 .figure__cap { font-size: 13.5px; color: var(--dim); margin-top: 6px; }

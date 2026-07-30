@@ -25,15 +25,15 @@ window.COURSE = {
       title: "Медіатор і перші мелодії",
       goal: "Рівний удар медіатором під метроном і перша впізнавана одноголоса тема.",
       lessons: [
-        { id: "m1l1", title: "Удари вниз: чверті під метроном", min: 35, file: "lessons/m1l1-downstrokes.html", status: "planned" },
-        { id: "m1l2", title: "Перехід між сусідніми струнами", min: 35, file: "lessons/m1l2-string-change.html", status: "planned" },
-        { id: "m1l3", title: "Alternate picking: вниз-вгору", min: 40, file: "lessons/m1l3-alternate.html", status: "planned" },
-        { id: "m1l4", title: "Ліва рука: пальці 1-2-3-4, хроматика", min: 35, file: "lessons/m1l4-left-hand.html", status: "planned" },
-        { id: "m1l5", title: "Табулатура: як читати", min: 30, file: "lessons/m1l5-tab.html", status: "planned" },
-        { id: "m1l6", title: "Нотний стан і скрипковий ключ", min: 40, file: "lessons/m1l6-staff.html", status: "planned" },
-        { id: "m1l7", title: "Ноти на 1-й та 2-й струнах", min: 40, file: "lessons/m1l7-notes-e-b.html", status: "planned" },
-        { id: "m1l8", title: "Перша мелодія цілком", min: 45, file: "lessons/m1l8-first-melody.html", status: "planned" },
-        { id: "m1l9", title: "Чекпоінт модуля", min: 30, file: "lessons/m1l9-checkpoint.html", status: "planned" }
+        { id: "m1l1", title: "Удари вниз: чверті під метроном", min: 35, file: "lessons/m1l1-downstrokes.html", status: "ready" },
+        { id: "m1l2", title: "Перехід між сусідніми струнами", min: 35, file: "lessons/m1l2-string-change.html", status: "ready" },
+        { id: "m1l3", title: "Alternate picking: вниз-вгору", min: 40, file: "lessons/m1l3-alternate.html", status: "ready" },
+        { id: "m1l4", title: "Ліва рука: пальці 1-2-3-4, хроматика", min: 35, file: "lessons/m1l4-left-hand.html", status: "ready" },
+        { id: "m1l5", title: "Табулатура: як читати", min: 30, file: "lessons/m1l5-tab.html", status: "ready" },
+        { id: "m1l6", title: "Нотний стан і скрипковий ключ", min: 40, file: "lessons/m1l6-staff.html", status: "ready" },
+        { id: "m1l7", title: "Ноти на 1-й та 2-й струнах", min: 40, file: "lessons/m1l7-notes-e-b.html", status: "ready" },
+        { id: "m1l8", title: "Перша мелодія цілком", min: 45, file: "lessons/m1l8-first-melody.html", status: "ready" },
+        { id: "m1l9", title: "Чекпоінт модуля", min: 30, file: "lessons/m1l9-checkpoint.html", status: "ready" }
       ]
     },
     {
@@ -145,6 +145,8 @@ window.COURSE = {
 
   /* Розбори пісень. level — з якого модуля пісня стає посильною. */
   songs: [
+    { id: "s-pd-1", title: "Щедрик", artist: "Микола Леонтович", genre: "pd", level: 1, file: "songs/s-pd-1.html", status: "ready" },
+    { id: "s-pd-2", title: "Ода до радості", artist: "Бетховен", genre: "pd", level: 1, file: "songs/s-pd-2.html", status: "ready" },
     { id: "s-anime-1", title: "Gurenge", artist: "LiSA — Kimetsu no Yaiba", genre: "anime", level: 3, file: "songs/s-anime-1.html", status: "planned" },
     { id: "s-anime-2", title: "Cruel Angel's Thesis", artist: "Neon Genesis Evangelion", genre: "anime", level: 2, file: "songs/s-anime-2.html", status: "planned" },
     { id: "s-anime-3", title: "Silhouette", artist: "KANA-BOON — Naruto Shippuden", genre: "anime", level: 3, file: "songs/s-anime-3.html", status: "planned" },
@@ -162,6 +164,7 @@ window.COURSE = {
   ],
 
   genres: {
+    pd: "Повні розбори",
     anime: "Аніме",
     ost: "Саундтреки",
     rock: "Рок",
